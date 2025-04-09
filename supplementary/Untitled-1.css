@@ -1,0 +1,22 @@
+    <section class="popular-items">
+        <div class="container-outer">
+            <div class="container pop-container">
+                <div class="pop-top">
+                    <div class="pop-title">Популярные товары</div>
+                    <div class="pop-buttons"></div>
+                </div>
+                <div class="pop-body">
+                    <div class="pop-slider">
+                        <div class="pop-slider-top">
+                            <img src="/icons/pop-slider-item1.jpg" alt="item">
+                        </div>
+                        <div class="pop-slider-center">iPhone 16 Pro Max 256GB Desert Titanium</div>
+                        <div class="pop-slider-bottom">
+                            <div class="pop-price">53 799 грн</div>
+                            <button class="pop-buy-button"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
