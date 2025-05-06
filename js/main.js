@@ -4,6 +4,31 @@ $(function(){
       slidesToScroll: 4,
       arrows: false,
       infinite: true,
+      responsive:  [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            }
+        },
+        {
+            breakpoint: 696,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            }
+        },
+        {
+            breakpoint: 425,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: false,         // отключить центровку
+                variableWidth: false,  
+            }
+        }
+      ]
     })
     $('.pop-prev').on('click', function (e) {
         e.preventDefault()
@@ -16,11 +41,53 @@ $(function(){
 });
 
 $(function(){
+    $('.banner-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      infinite: true,
+    })
+    $('.banner-prev').on('click', function (e) {
+        e.preventDefault()
+        $('.banner-slider').slick('slickPrev')
+    })
+    $('.banner-next').on('click', function (e) {
+        e.preventDefault()
+        $('.banner-slider').slick('slickNext')
+    })
+});
+
+$(function(){
     $('.new-slider').slick({
       slidesToShow: 4,
       slidesToScroll: 4,
       arrows: false,
       infinite: true,
+      responsive:  [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            }
+        },
+        {
+            breakpoint: 696,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            }
+        },
+        {
+            breakpoint: 425,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: false,         // отключить центровку
+                variableWidth: false,  
+            }
+        }
+      ]
     })
     $('.new-prev').on('click', function (e) {
         e.preventDefault()
@@ -32,82 +99,62 @@ $(function(){
     })
 });
 
-$('.catalogue-container').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $('.catg-container').offset().top
-    }, 800); 
+document.getElementById("sfooter__info-title").addEventListener("click", function() {
+    this.classList.toggle("active");
+    document.getElementById("sfooter__info-popup").classList.toggle("active");
 });
-  
+
+document.getElementById("sfooter__cat-info-title").addEventListener("click", function() {
+    this.classList.toggle("active");
+    document.getElementById("sfooter__cat-info-popup").classList.toggle("active");
+});
 
 
-const arrowLeft = document.querySelector(".area-left");
-const arrowRight = document.querySelector(".area-right");
-const slides = document.querySelectorAll(".slider-image");
-const paginationMarks = document.querySelectorAll(".pagination-mark");
 
-let currentSlideIndex = 0;
+const level1Items = document.querySelectorAll('.cat-popup__list-1 ul li');
+const level2Blocks = document.querySelectorAll('.cat-popup__list-2');
+const level3Blocks = document.querySelectorAll('.cat-popup__list-3');
 
-function createPaginationCircle() {
-    
-}
-
-function showSlide() {
-    slides[currentSlideIndex].classList.add("block");
-}
-
-function hideSlide() {
-    slides[currentSlideIndex].classList.remove("block");
-}
-
-function updateArrowColors() {
-    arrowLeft.classList.remove("arrow-area-dark");
-    arrowRight.classList.remove("arrow-area-dark");
-
-    if (currentSlideIndex === 1 || currentSlideIndex === 3) {
-        arrowLeft.classList.add("arrow-area-dark");
-        arrowRight.classList.add("arrow-area-dark");
-    }
-}
-
-function nextSlide() {
-    hideSlide();
-    currentSlideIndex ++;
-    if(currentSlideIndex > slides.length - 1) {
-        currentSlideIndex = 0;
-    }
-    showSlide();
-    updatePagination();
-    updateArrowColors();
-}
-
-function prevSlide() {
-    hideSlide();
-    currentSlideIndex --;
-    if(currentSlideIndex < 0) {
-        currentSlideIndex = slides.length - 1;
-    }
-    showSlide();
-    updatePagination();
-    updateArrowColors();
-}
-
-function updatePagination() {
-    paginationMarks.forEach((mark) => mark.classList.remove('pagination-active'));
-    paginationMarks[currentSlideIndex].classList.add('pagination-active');
-}
-
-paginationMarks.forEach((mark, index) => {
-    mark.addEventListener("click", () => {
-        hideSlide();
-        currentSlideIndex = index;
-        showSlide();
-        updatePagination();
-        updateArrowColors();
+level1Items.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    console.log("Hover on level 1 item", item); // Добавьте это для отладки
+    const target = item.dataset.category;
+    level2Blocks.forEach(block => {
+      block.style.display = block.dataset.parent === target ? 'block' : 'none';
     });
+    level3Blocks.forEach(block => block.style.display = 'none');
+  });
+});
+console.log(level1Items);
+
+document.querySelectorAll('.cat-popup__list-2 ul li').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    const target = item.dataset.subcategory;
+    level3Blocks.forEach(block => {
+      block.style.display = block.dataset.parent === target ? 'block' : 'none';
+    });
+  });
 });
 
 
-arrowRight.addEventListener("click", nextSlide);
-arrowLeft.addEventListener("click", prevSlide);
+const catalogueContainer = document.querySelector('.catalogue-container');
+const catPopup = document.querySelector('.cat-popup');
+const catPopupContainer = document.querySelector('.cat-popup__container');
+const headerContainer = document.querySelector('.header-container');
 
-updateArrowColors();
+// Показываем меню, только если курсор на catalogueContainer
+catalogueContainer.addEventListener('mouseenter', () => {
+    catPopup.style.display = 'block';
+});
+
+// Скрываем меню, когда курсор выходит из catalogueContainer, .header-container-outer и .cat-popup
+document.addEventListener('mousemove', (event) => {
+    // Проверяем, находится ли курсор внутри catalogueContainer, .header-container-outer или .cat-popup
+    const isCursorInside = catalogueContainer.contains(event.target) ||
+                           headerContainer.contains(event.target) ||
+                           catPopupContainer.contains(event.target);
+
+    if (!isCursorInside) {
+        catPopup.style.display = 'none';
+    }
+});
