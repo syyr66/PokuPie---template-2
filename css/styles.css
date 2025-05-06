@@ -1135,7 +1135,7 @@ header {
     display: inline-block;
     width: 7px;
     height: 7px;
-    background-image: url('icons/sfooter-more.svg');
+    background-image: url('../icons/sfooter-more.svg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: absolute;
