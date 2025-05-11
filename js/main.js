@@ -20,7 +20,7 @@ $(function(){
             }
         },
         {
-            breakpoint: 425,
+            breakpoint: 418,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -79,7 +79,7 @@ $(function(){
             }
         },
         {
-            breakpoint: 425,
+            breakpoint: 418,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,

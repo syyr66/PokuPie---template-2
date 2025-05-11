@@ -1,0 +1,52 @@
+html {
+    box-sizing:border-box;
+}
+
+.flex-container {
+    height: 100%;
+    margin: 100px 150px;
+    border:10px solid #00c6d4;
+    background-color: #fff;
+    min-width: 102px;
+}
+
+/* --------------------------------------- */
+.flex-container__item-1 {
+    border:10px solid #2701b1;
+}
+
+.flex-container__item-1__content {
+    font-size: 40px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+/* ---------------------------------------- */
+.gatherer {
+    border:10px solid #2701b1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap-reverse
+}
+
+/* ---------------------------------------- */
+.flex-container__item-2 {
+    border:10px solid #7a0000;
+}
+
+.flex-container__item-2__content {
+    font-size: 40px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+/* ------------------------------------------ */
+.flex-container__item-3 {
+    border:10px solid #7a0000;
+}
+
+.flex-container__item-3__content {
+    font-size: 40px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 20px;
+}

@@ -1,0 +1,68 @@
+
+.wrapper {
+    padding: 320px 15px;
+    height:60vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 100%;
+    border: 10px solid #515151;
+    display: flex;
+}
+
+
+.block {
+    height: 300px;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow:inset 0 0 20px rgba(0, 0, 0, 0.842);
+}
+
+.red {
+    background-color: rgb(235, 118, 118);
+}
+
+.blue {
+    background-color: rgb(80, 91, 235);
+}
+
+.orange {
+    background-color: rgb(223, 158, 59);
+}
+
+.green {
+    background-color: rgb(113, 212, 113);
+}
+
+.purple {
+    background-color: rgb(205, 148, 231);
+}
+
+/* ------------------------------------------ */
+
+
+.green {
+    position: sticky;
+    top: 60px;
+}
+
+.orange {
+    position: sticky;
+    top: 160px;
+}
+.purple {
+    position: sticky;
+    top: 0px;
+}
+.blue {
+    position: sticky;
+    top: 320px;
+}
+
+.red {
+    position:sticky;
+    top: 100px;
+}
