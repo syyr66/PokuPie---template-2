@@ -33,6 +33,10 @@ body {
 	margin: 0;
 }
 
+body, input, button, textarea, select {
+    font: inherit;
+}
+
 html {
     font-family: Inter, sans-serif;
     font-size: 12px;
@@ -452,8 +456,8 @@ header {
 }
 
 .pop-slider-top img{
-    height:182px;
-    width: 166px;
+    height:180px;
+    width: 180px;
     object-fit: contain;
 }
 
@@ -490,9 +494,10 @@ header {
 }
 
 .pop-buy-button {
-    height: 49px;
-    width: 117px;
-    font-weight: 600;
+    height: 40px;
+    width: 107px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
     font-size: 14;
     color: #fff;
     border: 1px solid #FFA939;
@@ -622,8 +627,8 @@ header {
 }
 
 .new-slider-top img{
-    height:182px;
-    width: 166px;
+    height:180px;
+    width: 180px;
     object-fit: contain;
 }
 
@@ -659,9 +664,10 @@ header {
 }
 
 .new-buy-button {
-    height: 49px;
-    width: 117px;
-    font-weight: 600;
+    height: 40px;
+    width: 107px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
     font-size: 14;
     color: #fff;
     border: 1px solid #FFA939;
@@ -1240,9 +1246,61 @@ header {
     gap: 6.63px;
 }
 
-.visa {
+
+
+/* Tempate: item-list  */
+
+.toplist {
 
 }
+
+.toplist__navigation {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+
+}
+
+.toplist__navigation svg{
+    padding-right: 7px;
+}
+
+.toplist__heading-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 24px;
+}
+
+.toplist__models-list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 272px;
+    gap: 47px;
+}
+
+.toplist__heading {
+    font-size: 40px;
+    margin: 0;
+}
+
+
+
+.toplist__model {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.toplist__model img{
+    height: 86px;
+    padding-bottom: 8px;
+}
+
+.toplist__model-name {
+    text-align: center;
+    width: 78px;
+}
+
 
 
 
@@ -1589,7 +1647,7 @@ header {
         max-height: 39px;
     }
     .pop-buy-button, .new-buy-button {
-        font-weight: 600;
+        font-weight: 500;
         width: 120px;
         height: 44px;
         font-size: 15px;
