@@ -1831,6 +1831,15 @@ header {
     .banner-arrow {
         right:23%;
     }
+
+    .pop-slider, .new-slider {
+        width: 88%;
+    }
+
+    .pop-slider .slick-slide:hover, .new-slider .slick-slide:hover {
+        border: 1px solid #fff;
+    }
+
     .pop-slider-top, .new-slider-top {
         height: 217px;
         padding-bottom: 10px;
@@ -1864,15 +1873,16 @@ header {
         border: 1.4px solid #ffffff;
     }
 
-    .pop-slider .slick-slide:hover, .new-slider .slick-slide:hover {
-        border: 1.4px solid #FFA939;
-    }
     .pop-title, .new-title {
         padding-left: 0px;
     }
     .pop-slide, .new-slide{
         overflow: hidden;
     }
+    .new-top, .pop-top {
+        padding-bottom: 36px;
+    }
+
 }
 
 
