@@ -46,3 +46,38 @@ document.addEventListener('mousemove', (event) => {
         catPopup.style.display = 'none';
     }
 });
+
+
+$(function() {
+  const slider = $("#products__price-slider");
+
+  const min = +slider.data("min");
+  const max = +slider.data("max");
+
+  slider.slider({
+    range: true,
+    min: min,
+    max: max,
+    values: [min, max],
+    slide: function(event, ui) {
+      $("#price-min").text(ui.values[0].toLocaleString('uk-UA') + " грн.");
+      $("#price-max").text(ui.values[1].toLocaleString('uk-UA') + " грн.");
+
+      $("#price-min-input").val(ui.values[0]);
+      $("#price-max-input").val(ui.values[1]);
+    }
+  });
+
+  const values = slider.slider("values");
+  $("#price-min").text(values[0].toLocaleString('uk-UA') + " грн.");
+  $("#price-max").text(values[1].toLocaleString('uk-UA') + " грн.");
+
+  $("#price-min-input").val(values[0]);
+  $("#price-max-input").val(values[1]);
+});
+
+
+
+$(".products__leftbar-item-top").click(function (e) {
+  $(this).closest(".products__leftbar-item").toggleClass("active");
+});

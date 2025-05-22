@@ -1357,13 +1357,14 @@ header {
 .products__item-list {
     display: flex;
     flex-wrap: wrap; 
-    column-gap: 55px;
+    column-gap: 48px;
     row-gap: 73px;
     padding-left: 57px;
+    box-sizing: border-box;
 }
 
 .products__item {
-    width: 233px;
+    flex: 0 0 calc((100% - 104px) / 3);
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -1391,7 +1392,7 @@ header {
 }
 
 .products__item-title {
-    width: 215px;
+    max-width: 215px;
     padding-bottom: 18px;
     font-size: 14px;
     text-align: center;
@@ -1410,8 +1411,8 @@ header {
 }
 
 .products__buy-button {
-    width: 117px;
-    height: 49px;
+    width: 106px;
+    height: 41px;
     font-weight: 600;
     font-size: 14px;
     color: #fff;
@@ -1422,7 +1423,88 @@ header {
 
 .products__leftbar {
     min-width: 235px;
+}
+
+.filters-form {
     padding-top: 30px;
+    position: sticky;
+    top:0;
+}
+
+
+.products__leftbar-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.products__leftbar-item.active .products__leftbar-content {
+    display: block;
+}
+
+.brand-content {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #e9e9e96e;
+    border-radius: 4px;
+}
+
+.products__brand-name {
+    padding-left: 8px;
+    font-weight: 400;
+}
+
+.products__price-values {
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.price-min__cont, .price-max__cont {
+    display: flex;
+}
+
+.products__price-dash {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.products__price-slider {
+    margin: 10px 0 15px;
+    height: 6px;
+    position: relative;
+    border-radius: 3px;
+}
+
+.products__price-slider.ui-widget-content {
+    background: #000000;
+}
+
+.products__price-slider.ui-slider-horizontal {
+    height: 0.3em;
+}
+
+.ui-slider-range {
+  background: #000;
+}
+
+.ui-slider-handle.ui-corner-all.ui-state-default {
+    top: 0;
+    width: 11px;
+    height: 11px;
+    background: #a6a6a6;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: -0.3em;
+}
+
+.ui-slider-handle:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .products__leftbar__submit-button {
@@ -1461,6 +1543,7 @@ header {
     border: 1px solid #FFA939;
     border-radius: 3px;
     color: #FFA939;
+    background-color: #fff;
     font-size: 14px;
     font-weight: 500;    
 }
@@ -1469,11 +1552,13 @@ header {
 
 }
 
-
-.products__leftbar-item {
+.products__leftbar-item-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.products__leftbar-item {
     padding-bottom: 30px;
 }
 
