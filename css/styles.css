@@ -1619,8 +1619,9 @@ header {
 }
 
 .mailing-terms {
-    width: 256px;
+    width: 244px;
     font-size: 9px;
+    line-height: 140%;
 }
 
 .mailing-terms a{
